@@ -1,0 +1,1 @@
+<?php require 'includes/db.php'; $hash=password_hash('admin123', PASSWORD_DEFAULT); $pdo->prepare("DELETE FROM users WHERE email=?")->execute(['admin@shop.com']); $pdo->prepare("INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)")->execute(['Admin','admin@shop.com',$hash,'admin']); echo "Admin fixed! admin@shop.com / admin123 <a href='login.php'>Login</a>";?>
